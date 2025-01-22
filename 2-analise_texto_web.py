@@ -37,3 +37,31 @@ palavras = [
 ]
 print(palavras)
 print(len(palavras))
+
+# 3 - Aplicando Análise Textual II
+fdist = FreqDist(palavras)
+# print(fdist.most_common(10))
+
+novas_palavras = [palavra for palavra in palavras if palavra.isalnum()]
+fdist = FreqDist(novas_palavras)
+print(fdist.most_common(10))
+
+
+def plot_cloud(wordcloud):
+    plt.figure(figsize=(40, 30))
+    plt.imshow(wordcloud)
+    plt.axis("off")
+    plt.show()
+
+
+wordcloud = WordCloud(
+    width=3000,
+    height=2000,
+    random_state=1,
+    background_color="navy",
+    colormap="rainbow",
+    collocations=False,
+    stopwords=STOPWORDS,
+).generate(" ".join(novas_palavras))
+
+plot_cloud(wordcloud)
