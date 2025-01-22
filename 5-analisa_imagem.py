@@ -24,3 +24,16 @@ resize_img_big.show()
 dim = (200, 200, 250, 300)
 crop_img = img.crop(dim)
 crop_img.show()
+
+# 3 - Utilizando Operações em Imagem II
+enhancer = ImageEnhance.Brightness(img)
+bright_img = enhancer.enhance(3)
+bright_img.show()
+
+enhancer = ImageEnhance.Contrast(img)
+contrast_img = enhancer.enhance(3)
+contrast_img.show()
+
+# 4 - Utilizando Filtros
+filtro_blur = img.filter(ImageFilter.SMOOTH)
+filtro_blur.show()
