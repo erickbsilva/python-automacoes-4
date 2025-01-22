@@ -59,7 +59,7 @@ wordcloud = WordCloud(
     stopwords=STOPWORDS,
 ).generate(texto)
 
-# plot_cloud(wordcloud)
+plot_cloud(wordcloud)
 
 try:
     file_path = "data/upvote.png"
