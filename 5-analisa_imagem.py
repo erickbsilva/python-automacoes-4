@@ -6,4 +6,4 @@ img = Image.open("data/sparta.png")
 img.show()
 
 gray_img = img.convert("L")
-# gray_img.show()
+gray_img.show()
