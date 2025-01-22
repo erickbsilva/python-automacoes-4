@@ -8,7 +8,7 @@ from wordcloud import WordCloud, STOPWORDS
 from PIL import Image
 import numpy as np
 
-# nltk.download('stopwords')
+nltk.download("stopwords")
 
 # 1 - Importando Artigo da Internet
 g = Goose()
@@ -20,3 +20,20 @@ print(artigo.title)
 print(artigo.meta_description)
 print(artigo.links)
 print(artigo.cleaned_text)
+
+# 2 - Aplicando Análise Textual I
+word_tokens = word_tokenize(artigo.cleaned_text)
+print(word_tokens)
+print(len(word_tokens))
+
+portuguese_stops = set(stopwords.words("portuguese"))
+
+# for palavra in word_tokens:
+#     if palavra.lower() not in portuguese_stops:
+#         print(palavra)
+#         print(len(palavra))
+palavras = [
+    palavra for palavra in word_tokens if palavra.lower() not in portuguese_stops
+]
+print(palavras)
+print(len(palavras))
